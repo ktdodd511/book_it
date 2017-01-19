@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170119000859) do
+ActiveRecord::Schema.define(version: 20170119192651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,37 @@ ActiveRecord::Schema.define(version: 20170119000859) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
+  end
+
+  create_table "authors", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "genre"
+    t.string   "date_published"
+    t.string   "description"
+    t.integer  "user_id"
+    t.integer  "author_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["author_id"], name: "index_books_on_author_id", using: :btree
+    t.index ["user_id"], name: "index_books_on_user_id", using: :btree
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "book_id"
+    t.integer  "author_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["author_id"], name: "index_genres_on_author_id", using: :btree
+    t.index ["book_id"], name: "index_genres_on_book_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
