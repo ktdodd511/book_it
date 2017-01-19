@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var googleAPI = "https://www.googleapis.com/books/v1/volumes?q=goldfinch";
+
+$.getJSON(googleAPI, function (response) {
+    console.log("JSON Data: " + response.items);
+    for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        // in production code, item.text should have the HTML entities escaped.
+        document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
+      }
+});

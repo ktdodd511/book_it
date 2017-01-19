@@ -16,6 +16,22 @@
   </div>
 <%- end -%>
 
+<% if current_user %>
+  <nav class="navbar header">
+    <%= link_to 'Logout', '/logout', class: 'btn btn btn-info' %>
+  </nav>
+
+<% else %>
+    <nav class="navbar header">
+      <%= link_to 'Sign Up', 'users/new', class: 'btn btn btn-info' %>
+      <%= link_to 'Log In', "sessions/new", class: 'btn btn btn-info' %>
+    </nav>
+    <% end %>
+
+
     <%= yield %>
+
+    <div id='content'></div>
+
   </body>
 </html>

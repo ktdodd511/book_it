@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-  get 'people/new'
+  get '/logout' => 'sessions#destroy'
 
   root to: 'welcome#index'
 
