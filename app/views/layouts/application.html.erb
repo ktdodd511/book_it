@@ -9,6 +9,13 @@
   </head>
 
   <body>
+
+    <%- flash.each do |name, msg| -%>
+  <div class="alert alert-warning">
+    <strong><%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %></strong>
+  </div>
+<%- end -%>
+
     <%= yield %>
   </body>
 </html>

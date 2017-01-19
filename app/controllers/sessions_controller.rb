@@ -3,12 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    person = login(params[:email], params[:password], params[:remember_me])
-    if person
-      redirect_back_or_to root_url, :notice => "Successfully logged in!"
+    user = login(params[:email], params[:password], params[:remember_me])
+    if user
+      redirect_to root_url
+      flash[:notice] = "Successfully logged in!"
     else
-      flash.now.alert = "Email or password was invalid."
       render :new
+      flash[:notice] = "Email or password was invalid."
     end
   end
 
