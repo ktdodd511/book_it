@@ -1,7 +1,3 @@
-<%= form_for @user do |f| %>
-<p><b>Email: </b><p><%= f.text_field :email, required: true %>
-<p><b>Password: </b><p><%= f.password_field :password %>
-<p><b>Password Confirmation: </b><p><%= f.password_field :password_confirmation %>
-<br>
-<%= f.submit class: "btn-default btn-sm"%>
- <% end %>
+<h2>Edit My Profile</h2>
+
+<%= render 'form' %>
