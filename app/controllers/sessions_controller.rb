@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     user = login(params[:email], params[:password], params[:remember_me])
     if user
-      redirect_to user
+      redirect_to user_path(user)
       flash[:notice] = "Successfully logged in!"
     else
       render :new

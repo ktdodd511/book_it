@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
+  get '/users/new' => 'users#new', as: 'new_user'
 
-  get 'sessions/new'
+  get '/sessions/new' => 'sessions#new', as: 'new_session'
 
   get '/logout' => 'sessions#destroy'
 
@@ -13,8 +13,9 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
 
-  resources :users
+  resources :users do
+    resources :sessions
+  end
+
   resources :sessions
-
-
 end

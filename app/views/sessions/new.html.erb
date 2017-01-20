@@ -1,19 +1,23 @@
 <h1>Log In</h1>
+<div class="container">
+  <div class="col-md-5 col-md-offset-0">
 
-<%= form_tag sessions_path do %>
+<%= form_tag new_session_path do %>
   <div class="field">
     <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email], autofocus: true %>
+    <%= text_field_tag :email, params[:email], class: "form-control", autofocus: true %>
   </div>
   <div class="field">
     <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= password_field_tag :password, class: "form-control" %>
   </div>
   <div class="field">
     <%= label_tag :remember_me %>
     <%= check_box_tag :remember_me, 1, params[:remember_me] %>
   </div>
   <div class="actions">
-    <%= submit_tag "Log in" %>
+    <%= submit_tag "Log in", class: "btn btn btn-success"%>
   </div>
   <% end %>
+</div>
+</div>
