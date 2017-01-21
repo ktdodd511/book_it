@@ -13,9 +13,7 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
 
-  resources :users do
-    resources :sessions
-  end
-
+  resources :users
   resources :sessions
+
 end

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       flash[:notice] = "You've successfully signed up!"
       redirect_to new_session
     else
-      redirect_to 'users/new'
+      redirect_to new_user
     end
   end
 
