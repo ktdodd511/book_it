@@ -14,9 +14,11 @@
  *= require_self
  */
 
- @import "bootstrap";
-
 
 .btn-success {
   border: 2px solid black;
+}
+
+html {
+  font-family: 'Overpass Mono', monospace;
 }

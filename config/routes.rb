@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'books/index'
+
+  get '/' => 'welcome#index', as: 'welcome'
+
   get '/users/new' => 'users#new', as: 'new_user'
 
   get '/sessions/new' => 'sessions#new', as: 'new_session'
@@ -15,5 +19,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
+  resources :books
 
 end

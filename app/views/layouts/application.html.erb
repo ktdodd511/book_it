@@ -4,9 +4,11 @@
     <title>Book-It</title>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag    "https://fonts.googleapis.com/css?family=Overpass+Mono", media: 'all' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Arsenal" rel="stylesheet">
+    <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js' %>
   </head>
 
   <body>
@@ -20,6 +22,8 @@
 <% if current_user %>
   <nav class="navbar header">
     <%= link_to 'Logout', '/logout', class: 'btn btn btn-info' %>
+    <%= link_to "Find a new book!", books_url, class: "btn btn-primary" %>
+
   </nav>
 
 <% else %>
