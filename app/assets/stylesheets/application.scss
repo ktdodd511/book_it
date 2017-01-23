@@ -13,15 +13,17 @@
  *= require_tree .
  *= require_self
  */
+ 
+ $font-family-base: "Overpass Mono", monospace;
+
+
+ @import "bootstrap";
+
 
  .alert-warning {
-   color: rgb(0,0,0);
+   color: rbg(0,0,0);
  }
 
 .btn-success {
   border: 2px solid black;
-}
-
-html {
-  font-family: 'Overpass Mono', monospace;
 }

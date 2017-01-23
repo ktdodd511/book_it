@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
 
-  resources :users
+  resources :users do
+    resources :books
+  end
   resources :sessions
   resources :books
 
