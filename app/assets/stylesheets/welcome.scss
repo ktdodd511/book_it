@@ -1,3 +1,14 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {
+  font-family: 'Arsenal', sans-serif;
+  color: rgb(247,229,205);
+   background: url('http://az616578.vo.msecnd.net/files/2016/01/03/635873821517718970351055939_Stack-of-books-great-education.jpg') no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
