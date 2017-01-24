@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'books/index'
-
   get '/' => 'welcome#index', as: 'welcome'
 
   get '/users/new' => 'users#new', as: 'new_user'
@@ -19,19 +17,16 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :books
-    resources :reading_lists
   end
 
 
+  resources :books
   resources :sessions
-
-  resources :books do
-    resources :reading_lists
-  end
+  resources :users
 
 
-  resources :reading_lists do
-    resources :books
-  end
+
+
+
 
 end
