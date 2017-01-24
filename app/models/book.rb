@@ -1,8 +1,8 @@
 class Book < ApplicationRecord
 
-  has_many :reading_lists, through: :users
+  belongs_to :reading_lists
   belongs_to :author
-  belongs_to :user
+  has_many :users, through: :reading_lists
 
 
 end

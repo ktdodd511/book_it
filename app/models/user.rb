@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
   authenticates_with_sorcery!
 
-  has_many :books
+  has_many :books, through: :reading_lists
   has_many :reading_lists
 
 

@@ -4,7 +4,7 @@
 <h4> Date Published: <%= @book.date_published.to_date %> </h4></br>
 <h4> Description: <%= @book.description %> </h4></br>
 
-<%= button_to "Have Read this Book", new_book_reading_list_path(@book), method: :get, class: "btn btn btn-success"%>
+<%= button_to "Have Read this Book", new_user_reading_list_path(current_user), method: :get, class: "btn btn btn-success"%>
 <%= link_to "Want to Read this Book", '/', class: "btn btn-success" %>
 <%= link_to "Currently Reading this Book", '/', class: "btn btn-success" %>
 <%= link_to "Back", :back %>
