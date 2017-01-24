@@ -1,10 +1,10 @@
 <h3>Title: <%= @book.title %> </h3></br>
 <h4> Author: <%= @book.author %> </h4></br>
 <h4> Genre: <%= @book.genre %> </h4></br>
-<h4> Date Published: <%= @book.date_published.to_date %> </h4></br>
+<h4> Date Published: <%= @book.date_published %> </h4></br>
 <h4> Description: <%= @book.description %> </h4></br>
 
-<%= button_to "Have Read this Book", new_user_reading_list_path(current_user), method: :get, class: "btn btn btn-success"%>
-<%= link_to "Want to Read this Book", '/', class: "btn btn-success" %>
-<%= link_to "Currently Reading this Book", '/', class: "btn btn-success" %>
+
+<%= link_to "Edit Book", edit_book_path(@book), class: "btn btn-success" %>
+<%= link_to "Delete Book", book_path(@book), method: :delete, data: { confirm: "Are you sure you want to delete this book?" }, class: "btn btn-danger" %>
 <%= link_to "Back", :back %>
