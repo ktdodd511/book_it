@@ -23,8 +23,9 @@
 <% if current_user %>
   <nav class="navbar header">
     <%= link_to 'Logout', '/logout', class: 'btn btn btn-info' %>
-    <%= link_to "Find a new book!", books_url, class: "btn btn-primary" %>
+    <%= link_to "Find a new book!", books_url, class: 'btn btn-primary' %>
     <%= link_to "My Profile", user_url(current_user), class: 'btn btn-warning' %>
+    <%= link_to "Book Review", books_url, class: 'btn btn-outline-primary' %>
   </nav>
 
 <% else %>
