@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170120185918) do
+ActiveRecord::Schema.define(version: 20170124071858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(version: 20170120185918) do
     t.index ["book_id"], name: "index_genres_on_book_id", using: :btree
   end
 
+  create_table "reading_lists", force: :cascade do |t|
+    t.boolean  "currently_reading"
+    t.boolean  "have_read"
+    t.boolean  "want_to_read"
+    t.integer  "user_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["user_id"], name: "index_reading_lists_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                           null: false
     t.string   "crypted_password"
@@ -66,7 +76,7 @@ ActiveRecord::Schema.define(version: 20170120185918) do
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
-    t.string   "first_name"                       
+    t.string   "first_name"
     t.string   "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree

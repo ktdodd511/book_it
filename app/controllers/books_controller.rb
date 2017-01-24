@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+
   def index
     @books = Book.all
   end
@@ -7,20 +8,14 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
-  def new
-    @book = Book.new
-  end
-
-  def create
-    book = Book.new(book_params)
-    if book.save
-      flash[:notice] = "You've saved a book!"
-      redirect to book
-    else
-      flash[:error] = "There was an error"
-      redirect_to books_url
+  def currently_reading
+    show
+    if current_user
+      current_user.currently_reading << @book
+      redirect_to user
     end
   end
+
 
 
   private

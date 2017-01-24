@@ -17,9 +17,16 @@
   <div class="row">
   <div class="col-md-4">
     <h3>Currently Reading</h3>
+
+
   </div>
   <div class="col-md-4">
     <h3>Recently Read</h3>
+    <% @user.reading_lists.each do |list| %>
+    <% if list.have_read? %>
+      <h4> <%= link_to list.book.title, book_path(list.book) %> </h4>
+    <% end %>
+    <% end %>
   </div>
   <div class="col-md-4">
     <h3>Interested In</h3>

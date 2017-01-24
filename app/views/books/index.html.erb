@@ -1,33 +1,12 @@
 <h1>Search for a Book!</h1>
 
-<!-- // function bookSearch() {
-//
-//   var search = document.getElementById('search').value;
-//   var googleAPI = "https://www.googleapis.com/books/v1/volumes?q=" + search;
-//
-//   // $.getJSON(googleAPI, function (response) {
-//   //     console.log("JSON Data: " + response.items);
-//   //     for (var i = 0; i < response.items.length; i++) {
-//   //         var item = response.items[i];
-//   //         document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title + " " + "by" + " " + item.volumeInfo.authors;
-//   //         $('#content').append('<button class="btn btn-success btn-sm"></button>');
-//   //       };
-//   //       $('.btn-sm').append('<%= link_to "View" %>');
-//   // });
-//
-//
-// }
 
-//
-// $('button').on('click', bookSearch)
-//
-//
-// -->
-
-<input id='search' placeholder="Search Book Titles">
+<input id='search' placeholder="Search Books">
 <button class="btn btn-outline-primary btn-lg">Search Books</button>
 
 
-<!-- <div id='content'></div> -->
-
 <%= link_to "Back", :back %>
+
+<% @books.each do |book| %>
+<p><%= link_to book.title, book_path(book), method: :get %> by <%= book.author %> <p>
+<% end %>

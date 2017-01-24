@@ -19,10 +19,19 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :books
+    resources :reading_lists
   end
-  
-  resources :sessions
-  resources :books
 
+
+  resources :sessions
+
+  resources :books do
+    resources :reading_lists
+  end
+
+
+  resources :reading_lists do
+    resources :books
+  end
 
 end
