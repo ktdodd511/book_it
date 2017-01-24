@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Book.destroy.all
+Book.destroy_all
 
 
-100.times do |i|
+100.times do
   Book.create(
     title: FFaker::Book.title,
     author: FFaker::Book.author,
