@@ -8,20 +8,12 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
-  def currently_reading
-    show
-    if current_user
-      current_user.currently_reading << @book
-      redirect_to user
-    end
-  end
-
 
 
   private
 
   def book_params
-    params.require(:book).permit(:title, :author)
+    params.require(:book).permit(:title, :author, :genre, :date_published, :description)
   end
 
 

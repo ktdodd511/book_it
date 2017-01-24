@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124071858) do
+ActiveRecord::Schema.define(version: 20170124084114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,9 +38,11 @@ ActiveRecord::Schema.define(version: 20170124071858) do
     t.string   "description"
     t.integer  "user_id"
     t.integer  "author_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "reading_list_id"
     t.index ["author_id"], name: "index_books_on_author_id", using: :btree
+    t.index ["reading_list_id"], name: "index_books_on_reading_list_id", using: :btree
     t.index ["user_id"], name: "index_books_on_user_id", using: :btree
   end
 
@@ -62,6 +64,8 @@ ActiveRecord::Schema.define(version: 20170124071858) do
     t.integer  "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "book_id"
+    t.index ["book_id"], name: "index_reading_lists_on_book_id", using: :btree
     t.index ["user_id"], name: "index_reading_lists_on_user_id", using: :btree
   end
 
