@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   resources :users do
     resources :books
   end
+  
   resources :sessions
   resources :books
+
 
 end
