@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    flash[:notice] = "You need to be logged in to do that!"
     redirect_to new_session_path unless current_user
   end
 
