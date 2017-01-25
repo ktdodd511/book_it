@@ -3,6 +3,7 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
 
   has_many :books
+  has_many :reviews
 
 
   validates_confirmation_of :password
