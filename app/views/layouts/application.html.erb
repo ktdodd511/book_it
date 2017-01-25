@@ -23,22 +23,23 @@
 
 <% if current_user %>
   <ul class="nav navbar-nav navbar-right">
-    <li> <%= link_to 'Logout', '/logout', class: 'btn btn btn-info' %> </li>
     <li> <%= link_to "Find a new book!", books_url, class: 'btn btn-primary' %> </li>
     <li> <%= link_to "My Profile", user_url(current_user), class: 'btn btn-warning' %> </li>
-    <li> <%= link_to "Book Review", '/', class: 'btn btn-outline-primary' %> </li>
+    <li> <%= link_to "Book Reviews", '/', class: 'btn btn-outline-primary' %> </li>
 
 
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Genres <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <% Category.all.each do |category| %>
-          <li>
+          <li class="<%='active' if params[:category] == category.name%>">
             <%= link_to category.name, books_path(category: category.name), class: "link" %>
           </li>
           <% end %>
         </ul>
     </li>
+    <li> <%= link_to 'Logout', '/logout', class: 'btn btn btn-info' %> </li>
+
   </ul>
 
 
@@ -49,7 +50,6 @@
     </ul>
 
     <% end %>
-
 
 
     <%= yield %>

@@ -1,14 +1,16 @@
-<h1>Search for a Book!</h1>
+<h1 class="current-category"> <%= params[:category] %> </h1>
 
-
-<input id='search' placeholder="Search Books">
-<button class="btn btn-outline-primary">Search Books</button>
 <% if current_user %>
-  <%= link_to "Add Book", new_book_path, class: "btn btn-success" %>
+  <%= link_to "Create a New Book", new_book_path, class: "btn btn-success" %>
 <% end %>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back, class: "btn btn-info" %>
 
-<% @books.each do |book| %>
-<p><%= link_to book.title, book_path(book), method: :get %> by <%= book.author %> <p>
+<% if @books.count == 0 %>
+  <h3>There are no books currently in this category!</h3>
+
+<% else %>
+  <% @books.each do |book| %>
+  <p><%= link_to book.title, book_path(book), method: :get %> by <%= book.author %> <p>
+  <% end %>
 <% end %>
