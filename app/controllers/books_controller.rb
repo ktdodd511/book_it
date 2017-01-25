@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
 
-  before_action :find_book, only: [:show, :edit, :update, :destroy]
+  before_action :find_book, :only => [:show, :edit, :update, :destroy]
+  before_action :authorize, :only => [:new, :edit]
+
 
   def index
     if params[:category].blank?
@@ -12,6 +14,11 @@ class BooksController < ApplicationController
   end
 
   def show
+    if @book.reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @book.reviews.average(:rating).round(2)
+    end
   end
 
   def new
@@ -60,12 +67,9 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :author, :date_published, :description, :category_id, :book_img)
   end
 
-  def id
-    params[:id]
-  end
 
   def find_book
-    @book = Book.find(id)
+    @book = Book.find(params[:id])
   end
 
 

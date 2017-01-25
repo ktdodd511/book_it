@@ -39,7 +39,6 @@ gem 'sorcery'
 
 gem 'paperclip'
 
-gem 'ratyrate'
 
 
 group :development, :test do

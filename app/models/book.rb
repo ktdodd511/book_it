@@ -4,6 +4,7 @@ class Book < ApplicationRecord
   belongs_to :category
   has_many :reviews
 
+
   validates :title, :author, presence: true, length: { minimum: 2 }
   validates :description, length: { minimum: 10 }
 

@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
 
   before_action :find_book
+  before_action :authorize, :only => [:edit, :new]
+
 
   def new
     @review = Review.new
