@@ -3,7 +3,9 @@
 
 <input id='search' placeholder="Search Books">
 <button class="btn btn-outline-primary">Search Books</button>
-<%= link_to "Add Book", new_book_path, class: "btn btn-success" %>
+<% if current_user %>
+  <%= link_to "Add Book", new_book_path, class: "btn btn-success" %>
+<% end %>
 
 <%= link_to "Back", :back %>
 

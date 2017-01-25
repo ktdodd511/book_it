@@ -7,9 +7,10 @@
     <%= stylesheet_link_tag    "https://fonts.googleapis.com/css?family=Overpass+Mono", media: 'all' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css', media: 'all' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js' %>
     <%= javascript_include_tag 'https://www.google.com/books/jsapi.js' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -21,32 +22,34 @@
 <%- end -%>
 
 <% if current_user %>
-  <nav class="navbar header">
-    <%= link_to 'Logout', '/logout', class: 'btn btn btn-info' %>
-    <%= link_to "Find a new book!", books_url, class: 'btn btn-primary' %>
-    <%= link_to "My Profile", user_url(current_user), class: 'btn btn-warning' %>
-    <%= link_to "Book Review", books_url, class: 'btn btn-outline-primary' %>
-  </nav>
+  <ul class="nav navbar-nav navbar-right">
+    <li> <%= link_to 'Logout', '/logout', class: 'btn btn btn-info' %> </li>
+    <li> <%= link_to "Find a new book!", books_url, class: 'btn btn-primary' %> </li>
+    <li> <%= link_to "My Profile", user_url(current_user), class: 'btn btn-warning' %> </li>
+    <li> <%= link_to "Book Review", '/', class: 'btn btn-outline-primary' %> </li>
+
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Genres <span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <% Category.all.each do |category| %>
+          <li>
+            <%= link_to category.name, books_path(category: category.name), class: "link" %>
+          </li>
+          <% end %>
+        </ul>
+    </li>
+  </ul>
+
 
 <% else %>
-    <nav class="navbar header">
-      <%= link_to 'Sign Up', new_user_url, class: 'btn btn btn-info' %>
-      <%= link_to 'Log In', new_session_url, class: 'btn btn btn-info' %>
-    </nav>
+    <ul class="nav navbar-nav navbar-right">
+      <li> <%= link_to 'Sign Up', new_user_url, class: 'btn btn btn-info' %> </li>
+      <li> <%= link_to 'Log In', new_session_url, class: 'btn btn btn-info' %> </li>
+    </ul>
+
     <% end %>
 
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories <span class="caret"></span></a>
-        <ul class="dropdown-menu" role="menu">
-          <% Category.all.each do |category| %>
-            <li>
-              <%= link_to category.name, books_path(category.name), class: "link" %>
-            </li>
-            <% end %>
-          </ul>
-      </li>
-    </ul>
 
 
     <%= yield %>
