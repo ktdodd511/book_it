@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = login(params[:email], params[:password], params[:remember_me])
     if user
       redirect_to user_path(user)
-      flash[:notice] = "Successfully logged in!"
+      flash[:notice] = "You're logged in!"
     else
       render :new
       flash[:notice] = "Email or password was invalid."
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to root_url, :notice => "Logged out"
+    redirect_to root_url, :notice => "Successfully logged out"
   end
 
 end

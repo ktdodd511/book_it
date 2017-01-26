@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get '/' => 'welcome#index', as: 'welcome'
 
   get '/users/new' => 'users#new', as: 'new_user'
@@ -24,6 +25,8 @@ Rails.application.routes.draw do
   end
 
   resources :sessions
+
+  resources :password_resets
 
 
 

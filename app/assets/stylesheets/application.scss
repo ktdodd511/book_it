@@ -31,10 +31,6 @@
   border: 2px solid black;
 }
 
-body {
-  padding-top: 70px;
-}
-
 .navbar-right {
   padding-bottom: 50px;
 }
@@ -51,4 +47,8 @@ body {
 
 #num-of-reviews {
   font-size: 15px;
+}
+
+#book-description {
+  background-color: rgba(267,245,234,.5);
 }

@@ -11,7 +11,9 @@
     <h4> Author: <%= @book.author %> </h4></br>
     <h4>Genre: <%= @book.category.name%> </h4></br>
     <h4> Date Published: <%= @book.date_published %> </h4></br>
-    <h4> Description: <%= @book.description %> </h4></br>
+    <div id="book-description">
+      <h4> Description: <%= @book.description %> </h4></br>
+    </div>
   </div>
 
 </div>

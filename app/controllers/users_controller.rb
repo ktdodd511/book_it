@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "You've successfully signed up!"
-      redirect_to new_session
+      redirect_to new_session_url
     else
-      redirect_to new_user
+      redirect_to new_user_url
     end
   end
 

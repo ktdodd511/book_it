@@ -40,14 +40,12 @@ ActiveRecord::Schema.define(version: 20170125070749) do
     t.integer  "author_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-    t.integer  "reading_lists_id"
     t.integer  "category_id"
     t.string   "book_img_file_name"
     t.string   "book_img_content_type"
     t.integer  "book_img_file_size"
     t.datetime "book_img_updated_at"
     t.index ["author_id"], name: "index_books_on_author_id", using: :btree
-    t.index ["reading_lists_id"], name: "index_books_on_reading_lists_id", using: :btree
     t.index ["user_id"], name: "index_books_on_user_id", using: :btree
   end
 
@@ -55,27 +53,6 @@ ActiveRecord::Schema.define(version: 20170125070749) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "genres", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.integer  "book_id"
-    t.integer  "author_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["author_id"], name: "index_genres_on_author_id", using: :btree
-    t.index ["book_id"], name: "index_genres_on_book_id", using: :btree
-  end
-
-  create_table "reading_lists", force: :cascade do |t|
-    t.boolean  "currently_reading"
-    t.boolean  "have_read"
-    t.boolean  "want_to_read"
-    t.integer  "user_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.index ["user_id"], name: "index_reading_lists_on_user_id", using: :btree
   end
 
   create_table "reviews", force: :cascade do |t|
