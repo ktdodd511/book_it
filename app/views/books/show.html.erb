@@ -1,4 +1,8 @@
+
+
 <div class="row">
+  <%= link_to "Back", :back, class: "btn btn btn-info" %>
+
   <div class="col-md-4">
     <%= image_tag @book.book_img.url(:book_show), class: "book-show" %>
   </div>
@@ -12,16 +16,17 @@
     <h4>Genre: <%= @book.category.name%> </h4></br>
     <h4> Date Published: <%= @book.date_published %> </h4></br>
     <div id="book-description">
-      <h4> Description: <%= @book.description %> </h4></br>
+      <h4> Description: </h4>
+      <h4> <%= @book.description %> </h4>
     </div>
   </div>
 
 </div>
 
 <div class="row">
-  <div class="col-md-4">
+  <div id="review-background" class="col-md-4">
 
-  
+
     <%= render @book.reviews %>
 
     <div>
@@ -32,7 +37,6 @@
 </div>
 
 
-<%= link_to "Back", :back, class: "btn btn btn-info" %>
 
 
 <% if current_user %>
