@@ -2,9 +2,9 @@
 
 
 
-* Ruby Version
+* Ruby Version: 2.3.0
 
-* System dependencies
+* Rails Version 5.0.1
 
 * Configuration
 

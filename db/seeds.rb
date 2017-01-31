@@ -7,18 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #
-# Book.destroy_all
-#
-#
-# 100.times do
-#   Book.create(
-#     title: FFaker::Book.title,
-#     author: FFaker::Book.author,
-#     genre: FFaker::Book.genre,
-#     description: FFaker::Book.description,
-#     date_published: FFaker::Time.date
-#     )
-#   end
+Category.destroy_all
+
 
 Category.create(name: "Fantasy")
 Category.create(name: "Science Fiction")
