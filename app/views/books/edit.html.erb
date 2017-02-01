@@ -1,12 +1,17 @@
-<h1> Edit Book </h1>
+<div class="col-md-6 col-md-offset-3">
 
-<%= simple_form_for @book, :html => { :multipart => true } do |f| %>
-  <%= f.select :category_id, @categories %>
-  <%= f.file_field :book_img %>
-  <%= f.input :title, label: "Book Title" %>
-  <%= f.input :author %>
-  <%= f.input :description %>
-  <%= f.input :date_published %>
-  <%= f.submit %>
+  <div class="edit-book-form">
+    <h1> Edit Book </h1>
 
-<% end %>
+    <%= simple_form_for @book, :html => { :multipart => true } do |f| %>
+      <%= f.select :category_id, @categories %>
+      <%= f.file_field :book_img %>
+      <%= f.input :title, label: "Book Title" %>
+      <%= f.input :author %>
+      <%= f.input :description %>
+      <%= f.input :date_published %>
+      <%= f.button :submit, :class => "btn-custom2" %>
+
+    <% end %>
+  </div>
+</div>

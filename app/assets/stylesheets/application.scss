@@ -19,6 +19,20 @@
 @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ @mixin background-tile {
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px 6px #ccc;
+	padding: 2.5em 2.25em;
+  margin-top: 100px;
+
+}
+
+.navbar-right {
+  margin-bottom: 20px;
+}
+
 #content {
   color: black;
 }
@@ -107,4 +121,64 @@ h1 {
 
 .dropdown-toggle {
   font-size: 20px;
+}
+.new-book-form {
+  @include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	#category_id {
+		margin-bottom: 10px;
+	}
+
+	#book_book_img {
+		margin-bottom: 10px;
+	}
+
+}
+
+.edit-book-form {
+  @include background-tile;
+
+  h1 {
+		margin-top: 0;
+	}
+
+	#book_category_id {
+		margin-bottom: 10px;
+	}
+
+	#book_book_img {
+		margin-bottom: 10px;
+	}
+
+}
+
+.new-review-form, .edit-review-form {
+  @include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	#rating-form {
+		margin-bottom: 15px;
+
+		label {
+			display: block;
+		}
+
+	}
+
+}
+
+.signup-form {
+	@include background-tile;
+
+	h2 {
+		margin-top: 0;
+	}
+
 }
