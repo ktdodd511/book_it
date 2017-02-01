@@ -38,6 +38,7 @@
 .book {
   height: 350px;
   width: 250px;
+  margin-bottom: 40px;
 }
 
 .book-show {
@@ -55,4 +56,55 @@
 
 #review-background {
   background-color: rgba(267,245,234,.5);
+}
+
+h1 {
+  font-size: 20px !important;
+}
+
+.review {
+  border-bottom: 1px solid gray;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.add-review {
+  padding-bottom: 20px;
+}
+
+.btn-custom {
+	color: darken(#f1c40f, 5%);
+	background-color: #fff;
+	border: 1px solid darken(#f1c40f, 5%);
+	padding: 8px 20px;
+	border-radius: 5px;
+	&:hover {
+    text-decoration: none;
+  	background-color: darken(#f1c40f, 5%);
+  	color: #fff;
+  	transition: 0.5s;
+  }
+}
+
+
+.btn-custom2 {
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #222;
+	padding: 8px 20px;
+  border-radius: 5px;
+  &:hover {
+  	text-decoration: none;
+  	background-color: #333;
+  	color: #fff;
+  	transition: 0.5s;
+  }
+}
+
+.profile, .all-books, .logout, .signup, .login {
+  padding: 15px;
+}
+
+.dropdown-toggle {
+  font-size: 20px;
 }

@@ -23,10 +23,6 @@
 
 <% if current_user %>
   <ul class="nav navbar-nav navbar-right">
-    <li> <%= link_to "View All Books!", books_url, class: 'btn btn-primary' %> </li>
-    <li> <%= link_to "My Profile", user_url(current_user), class: 'btn btn-warning' %> </li>
-    <li> <%= link_to "Book Reviews", '/', class: 'btn btn-outline-primary' %> </li>
-
 
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Genres <span class="caret"></span></a>
@@ -38,15 +34,18 @@
           <% end %>
         </ul>
     </li>
-    <li> <%= link_to 'Logout', '/logout', class: 'btn btn btn-info' %> </li>
+
+    <li class="all-books"> <%= link_to "View All Books!", books_url, class: 'btn btn-custom2' %> </li>
+    <li class="profile"> <%= link_to "My Profile", user_url(current_user), class: 'btn btn btn-custom' %> </li>
+    <li class="logout"> <%= link_to 'Logout', '/logout', class: 'btn btn btn-custom2' %> </li>
 
   </ul>
 
 
 <% else %>
     <ul class="nav navbar-nav navbar-right">
-      <li> <%= link_to 'Sign Up', new_user_url, class: 'btn btn btn-info' %> </li>
-      <li> <%= link_to 'Log In', new_session_url, class: 'btn btn btn-info' %> </li>
+      <li class="signup"> <%= link_to 'Sign Up', new_user_url, class: 'btn btn btn-custom' %> </li>
+      <li class="login"> <%= link_to 'Log In', new_session_url, class: 'btn btn btn-custom' %> </li>
     </ul>
 
     <% end %>
