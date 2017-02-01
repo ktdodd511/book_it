@@ -21,7 +21,7 @@
 
  @mixin background-tile {
 	box-sizing: border-box;
-	background-color: #fff;
+	background-color: rgba(253,245,230,.5);
 	border-radius: 5px;
 	box-shadow: 3px 3px 5px 6px #ccc;
 	padding: 2.5em 2.25em;
@@ -181,4 +181,8 @@ h1 {
 		margin-top: 0;
 	}
 
+}
+
+.current-category {
+	margin-bottom: 40px;
 }
