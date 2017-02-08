@@ -39,6 +39,8 @@ gem 'sorcery'
 
 gem 'paperclip'
 
+gem 'aws-sdk', '~> 2.3'
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do
