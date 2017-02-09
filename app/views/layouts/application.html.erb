@@ -22,6 +22,11 @@
 <%- end -%>
 
 <% if current_user %>
+
+<ul class="nav navbar-nav navbar-right">
+  <li class="all-books"> <%= link_to "View All Books!", books_url, class: 'btn btn btn-custom2' %> </li>
+</ul>
+
   <ul class="nav navbar-nav navbar-right">
 
     <li class="dropdown">
@@ -36,14 +41,14 @@
     </li>
   </ul>
 
+
+
   <ul class="nav navbar-nav navbar-right">
     <li class="profile"> <%= link_to "My Profile", user_url(current_user), class: 'btn btn-custom' %> </li>
     <li class="logout"> <%= link_to 'Logout', '/logout', class: 'btn btn btn-custom2' %> </li>
   </ul>
 
-  <ul class="nav navbar-nav navbar-right">
-    <li class="all-books"> <%= link_to "View All Books!", books_url, class: 'btn btn btn-custom2' %> </li>
-  </ul>
+
 
     <ul class="nav navbar-nav navbar-right">
       <li class="create-book"> <%= link_to "Create a New Book", new_book_path, class: 'btn btn-custom' %> </li>
